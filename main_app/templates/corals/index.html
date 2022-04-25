@@ -5,15 +5,17 @@
 
 {% for coral in corals %}
   <div class="card">
+    <a href="{% url 'detail' coral.id  %}">
     <div class="card-content">
       <span class="card-title">{{ coral.trade_name }}</span>
       <p>Scientific Name: {{ coral.scientific_name }}</p>
       <p>Type: {{ coral.coral_type }}</p>
       <p>Difficulty: {{ coral.difficulty }}</p>
-      <p>Ligthing: {{ coral.lighting }}</p>
+      <p>Lighting: {{ coral.lighting }}</p>
       <p>Water Flow: {{ coral.water_flow }}</p>
       <p>Notes: {{ coral.notes }}</p>
     </div>
+    </a>
   </div>
 {% endfor %}
 

@@ -12,3 +12,7 @@ def about(request):
 def corals_index(request):
   corals = Coral.objects.all()
   return render(request, 'corals/index.html', {'corals': corals})
+
+def corals_detail(request, coral_id):
+  coral = Coral.objects.get(id=coral_id)
+  return render(request, 'corals/detail.html', {'coral': coral})
