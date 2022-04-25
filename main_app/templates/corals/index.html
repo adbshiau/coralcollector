@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Corals List</h1>
+<h1>Corals Inventory</h1>
 
 {% for coral in corals %}
   <div class="card">
     <div class="card-content">
-      <span class="card-title">{{ coral.name }}</span>
-      <p>Breed: {{ coral.breed }}</p>
-      <p>Description: {{ coral.description }}</p>
-      {% if coral.age > 0 %}
-        <p>Age: {{ coral.age }}</p>
-      {% else %}
-        <p>Age: Kitten</p>
-      {% endif %}
+      <span class="card-title">{{ coral.trade_name }}</span>
+      <p>Scientific Name: {{ coral.scientific_name }}</p>
+      <p>Type: {{ coral.coral_type }}</p>
+      <p>Difficulty: {{ coral.difficulty }}</p>
+      <p>Ligthing: {{ coral.lighting }}</p>
+      <p>Water Flow: {{ coral.water_flow }}</p>
+      <p>Notes: {{ coral.notes }}</p>
     </div>
   </div>
 {% endfor %}
