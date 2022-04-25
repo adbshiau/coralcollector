@@ -10,3 +10,6 @@ class Coral(models.Model):
     water_flow = models.CharField(max_length=50)
     notes = models.CharField(max_length=250)
 
+    def __str__(self):
+        return f"{self.trade_name} is a/an {self.coral_type}."
+
