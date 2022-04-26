@@ -2,6 +2,11 @@
 
 
 {% block content %}
+{% if object %}
+    <h1>Edit <span class="teal-text">{{object.trade_name}}</span></h1>
+  {% else %}
+    <h1>Add Coral</h1>
+  {% endif %}
 <form action="" method="post" id="form">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
