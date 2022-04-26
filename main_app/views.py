@@ -1,6 +1,11 @@
+from typing import List
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView
 from .models import Coral
+
+class CoralList(ListView):
+  model = Coral
 
 # Create your views here.
 def home(request):
