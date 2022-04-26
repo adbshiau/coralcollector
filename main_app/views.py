@@ -8,6 +8,14 @@ class CoralCreate(CreateView):
   model = Coral
   fields = '__all__'
 
+class CoralUpdate(UpdateView):
+  model = Coral
+  fields = ['scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow', 'notes']
+
+class CoralDelete(DeleteView):
+  model = Coral
+  success_url = '/corals/'
+
 # Create your views here.
 def home(request):
   return HttpResponse('<h1>Hello!</h1>')

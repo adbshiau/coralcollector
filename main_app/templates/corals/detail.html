@@ -12,7 +12,11 @@
         <p>Lighting: {{ coral.lighting }}</p>
         <p>Water Flow: {{ coral.water_flow }}</p>
         <p>Notes: {{ coral.notes }}</p>
-    </div>    
+    </div>
+    <div class="card-action">
+        <a href="{% url 'corals_update' coral.id %}">Edit</a>
+        <a href="{% url 'corals_delete' coral.id %}">Delete</a>
+      </div>    
 </div>
 
 {% endblock  %}
