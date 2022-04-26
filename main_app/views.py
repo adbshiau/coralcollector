@@ -1,11 +1,12 @@
 from typing import List
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import CreateView
 from .models import Coral
 
-class CoralList(ListView):
+class CoralCreate(CreateView):
   model = Coral
+  fields = '__all__'
 
 # Create your views here.
 def home(request):
