@@ -1,5 +1,4 @@
 from django.urls import path
-from corals.views import CoralList
 from . import views
 
 urlpatterns = [

@@ -13,3 +13,6 @@ class Coral(models.Model):
     def __str__(self):
         return f"{self.trade_name} is a/an {self.coral_type}."
 
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'coral_id': self.id})
+
