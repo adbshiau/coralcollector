@@ -63,10 +63,10 @@ class Coral(models.Model):
 
 class Test(models.Model):
     date = models.DateField()
-    temp = models.DecimalField(max_digits=5, decimal_places=2)
-    kh = models.DecimalField(max_digits=3, decimal_places=1)
-    po4 = models.DecimalField(max_digits=3, decimal_places=1)
-    no3 = models.IntegerField()
+    temp = models.DecimalField('Temperature', max_digits=5, decimal_places=2)
+    kh = models.DecimalField('Carbonate Hardness', max_digits=3, decimal_places=1)
+    po4 = models.DecimalField('Phosphate', max_digits=3, decimal_places=1)
+    no3 = models.IntegerField('Nitrate')
 
     coral = models.ForeignKey(Coral, on_delete=models.CASCADE)
 
