@@ -30,6 +30,15 @@ WATER_FLOW = (
 )
 
 # Create your models here.
+class Location(models.Model):
+    country = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.country
+    
+    def get_absolute_url(self):
+        return reverse('location_detail', kwargs={'pk': self.id})
+
 class Coral(models.Model):
     trade_name = models.CharField(max_length=100)
     scientific_name = models.CharField(max_length=100)
@@ -53,6 +62,7 @@ class Coral(models.Model):
         choices=WATER_FLOW,
         default=WATER_FLOW[1][0]
         )
+    locations = models.ManyToManyField(Location)
 
     def __str__(self):
         return self.trade_name
