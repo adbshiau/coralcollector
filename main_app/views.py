@@ -49,3 +49,7 @@ def add_note(request, coral_id):
     new_note.coral_id = coral_id
     new_note.save()
   return redirect('detail', coral_id=coral_id)
+
+def assoc_location(request, coral_id, location_id):
+  Coral.objects.get(id=coral_id).locations.add(location_id)
+  return redirect('detail', coral_id=coral_id)

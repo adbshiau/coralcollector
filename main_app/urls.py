@@ -10,4 +10,5 @@ urlpatterns = [
     path('corals/<int:pk>/update/', views.CoralUpdate.as_view(), name='corals_update'),
     path('corals/<int:pk>/delete/', views.CoralDelete.as_view(), name='corals_delete'),
     path('corals/<int:coral_id>/add_note/', views.add_note, name='add_note'),
+    path('corals/<int:coral_id>/assoc_location/<int:location_id>/', views.assoc_location, name='assoc_location'),
 ]
