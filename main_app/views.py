@@ -34,9 +34,11 @@ def corals_detail(request, coral_id):
 
 def corals_detail(request, coral_id):
   coral = Coral.objects.get(id=coral_id)
+  unused_locations = Location.objects.exclude(id__in = coral.locations.all().values_list('id'))
   note_form = NoteForm()
   return render(request, 'corals/detail.html', {
-    'coral': coral, 'note_form': note_form
+    'coral': coral, 'note_form': note_form,
+    'locations': unused_locations
   })
 
 def add_note(request, coral_id):
