@@ -9,10 +9,10 @@
     <div class="card-content">
       <span class="card-title">{{ coral.trade_name }}</span>
       <p>Scientific Name: {{ coral.scientific_name }}</p>
-      <p>Type: {{ coral.coral_type }}</p>
-      <p>Difficulty: {{ coral.difficulty }}</p>
-      <p>Lighting: {{ coral.lighting }}</p>
-      <p>Water Flow: {{ coral.water_flow }}</p>
+      <p>Type: {{ coral.get_coral_type_display }}</p>
+      <p>Difficulty: {{ coral.get_difficulty_display }}</p>
+      <p>Lighting: {{ coral.get_lighting_display }}</p>
+      <p>Water Flow: {{ coral.get_water_flow_display }}</p>
     </div>
     </a>
   </div>

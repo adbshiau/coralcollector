@@ -38,3 +38,12 @@ def corals_detail(request, coral_id):
   return render(request, 'corals/detail.html', {
     'coral': coral, 'note_form': note_form
   })
+
+def add_note(request, coral_id):
+  form = NoteForm(request.POST)
+  # validate the form
+  if form.is_valid():
+    new_note = form.save(commit=False)
+    new_note.coral_id = coral_id
+    new_note.save()
+  return redirect('detail', coral_id=coral_id)

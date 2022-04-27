@@ -3,8 +3,8 @@ from django.urls import reverse
 
 TYPE = (
     ('S', 'Soft'),
-    ('L', 'Large Polyp Stony'),
-    ('P', 'Small Polyp Stony'),
+    ('L', 'Large Polyp Stony (LPS)'),
+    ('P', 'Small Polyp Stony (SPS)'),
     ('A', 'Anemone')
 )
 

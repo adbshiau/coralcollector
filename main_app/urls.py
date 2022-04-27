@@ -9,4 +9,5 @@ urlpatterns = [
     path('corals/create/', views.CoralCreate.as_view(), name='corals_create'),
     path('corals/<int:pk>/update/', views.CoralUpdate.as_view(), name='corals_update'),
     path('corals/<int:pk>/delete/', views.CoralDelete.as_view(), name='corals_delete'),
+    path('corals/<int:coral_id>/add_note/', views.add_note, name='add_note'),
 ]
