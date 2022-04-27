@@ -2,6 +2,7 @@ from typing import List
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from .models import Coral, Location
 from .forms import NoteForm
 
@@ -15,6 +16,24 @@ class CoralUpdate(UpdateView):
 
 class CoralDelete(DeleteView):
   model = Coral
+  success_url = '/corals/'
+
+class LocationList(ListView):
+  model = Location
+
+class LocationDetail(DetailView):
+  model = Location
+
+class LocationCreate(CreateView):
+  model = Location
+  fields = '__all__'
+
+class LocationUpdate(UpdateView):
+  model = Location
+  fields = '__all__'
+
+class LocationDelete(DeleteView):
+  model = Location
   success_url = '/corals/'
 
 # Create your views here.
