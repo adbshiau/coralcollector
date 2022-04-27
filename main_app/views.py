@@ -2,7 +2,7 @@ from typing import List
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Coral
+from .models import Coral, Location
 from .forms import NoteForm
 
 class CoralCreate(CreateView):
