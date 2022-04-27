@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Coral
+from .forms import NoteForm
 
 class CoralCreate(CreateView):
   model = Coral
@@ -30,3 +31,10 @@ def corals_index(request):
 def corals_detail(request, coral_id):
   coral = Coral.objects.get(id=coral_id)
   return render(request, 'corals/detail.html', {'coral': coral})
+
+def corals_detail(request, coral_id):
+  coral = Coral.objects.get(id=coral_id)
+  note_form = NoteForm()
+  return render(request, 'corals/detail.html', {
+    'coral': coral, 'note_form': note_form
+  })
