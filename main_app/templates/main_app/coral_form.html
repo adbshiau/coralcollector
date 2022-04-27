@@ -16,5 +16,19 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>
+
+  <script>
+    const coralTypeEl = document.getElementById('id_coral_type');
+    M.FormSelect.init(coralTypeEl);
+
+    const difficultyEl = document.getElementById('id_difficulty');
+    M.FormSelect.init(difficultyEl);
+
+    const lightingEl = document.getElementById('id_lighting');
+    M.FormSelect.init(lightingEl);
+
+    const waterFlowEl = document.getElementById('id_water_flow');
+    M.FormSelect.init(waterFlowEl);
+  </script>
 {% endblock content %}
     

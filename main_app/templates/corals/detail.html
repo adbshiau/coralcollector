@@ -21,7 +21,7 @@
     </div>
 </div>
 <div class="col 6">
-    <form action="{% url 'add_feeding' cat.id %}" method="POST">
+    <form action="{% url 'add_note' coral.id %}" method="POST">
         {% csrf_token %}
         {{ note_form.as_p }}
         <input type="submit" class="btn" value="Add Note">
@@ -49,6 +49,9 @@
         setDefaultDate: true,
         autoClose: true
   });
+
+    const coralTypeEl = document.getElementById('id_coral_type');
+    M.FormSelect.init(coralTypeEl);
 </script>
 {% endblock  %}
     
