@@ -10,7 +10,7 @@ class CoralCreate(CreateView):
 
 class CoralUpdate(UpdateView):
   model = Coral
-  fields = ['scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow', 'notes']
+  fields = ['scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow']
 
 class CoralDelete(DeleteView):
   model = Coral

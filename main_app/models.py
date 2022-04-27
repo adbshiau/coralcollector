@@ -34,41 +34,37 @@ class Coral(models.Model):
     trade_name = models.CharField(max_length=100)
     scientific_name = models.CharField(max_length=100)
     coral_type = models.CharField(
-        max_length=10,
+        max_length=1,
         choices=TYPE,
         default=TYPE[0][0]
         )
     difficulty = models.CharField(
-        max_length=10,
+        max_length=1,
         choices=DIFFICULTY,
         default=DIFFICULTY[2][0]
         )
     lighting = models.CharField(
-        max_length=10,
+        max_length=1,
         choices=LIGHTING,
         default=LIGHTING[1][0]
         )
     water_flow = models.CharField(
-        max_length=10,
+        max_length=1,
         choices=WATER_FLOW,
         default=WATER_FLOW[1][0]
         )
-    notes = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.trade_name} is a/an {self.coral_type}."
+        return self.trade_name
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'coral_id': self.id})
 
-class Test(models.Model):
+class Note(models.Model):
     date = models.DateField()
-    temp = models.DecimalField('Temperature', max_digits=5, decimal_places=2)
-    kh = models.DecimalField('Carbonate Hardness', max_digits=3, decimal_places=1)
-    po4 = models.DecimalField('Phosphate', max_digits=3, decimal_places=1)
-    no3 = models.IntegerField('Nitrate')
+    entry = models.CharField(max_length=250)
 
     coral = models.ForeignKey(Coral, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Tests done on {self.date}."
+        return f"Added on {self.date}."
