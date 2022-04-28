@@ -8,7 +8,7 @@ from .forms import NoteForm
 
 class CoralCreate(CreateView):
   model = Coral
-  fields = '__all__'
+  fields = ['trade_name', 'scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow']
 
 class CoralUpdate(UpdateView):
   model = Coral
