@@ -37,7 +37,7 @@ class Location(models.Model):
         return self.country
     
     def get_absolute_url(self):
-        return reverse('location_detail', kwargs={'pk': self.id})
+        return reverse('locations_detail', kwargs={'pk': self.id})
 
 class Coral(models.Model):
     trade_name = models.CharField(max_length=100)
