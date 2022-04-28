@@ -90,7 +90,8 @@
                 </div>
             {% endfor %}
         {% else %}
-            <h4 label="label">{{ coral.trade_name }} already has all locations available. Try adding a new location.</h4>        
+            <h4 id="label">{{ coral.trade_name }} already has all locations available. Try adding a new location.</h4>
+            <button><a href="{% url 'locations_create' %}">Add A Location</a></button>     
         {% endif %}
             
     </div>
