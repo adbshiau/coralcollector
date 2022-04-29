@@ -55,7 +55,7 @@ def about(request):
   return render(request, 'about.html')
 
 def corals_index(request):
-  corals = Coral.objects.all()
+  corals = Coral.objects.filter(user=request.user)
   return render(request, 'corals/index.html', {'corals': corals})
 
 def corals_detail(request, coral_id):
