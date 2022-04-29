@@ -27,7 +27,7 @@
             <li><a href="{% url 'locations_index' %}">View All Locations</a></li>
             <li><a href="{% url 'corals_create' %}">Add A Coral</a></li>
             <li><a href="/corals">View All Corals</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li><a href="{% url 'logout' %}">Log Out <span>{{ user.username }}</span></a></li>
           {% else %}
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
           <li><a href="{% url 'login' %}">Log In</a></li>
