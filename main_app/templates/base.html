@@ -22,10 +22,15 @@
         </ul>
         <ul class="right">
           <li><a href="/about">About</a></li>
-          <li><a href="{% url 'locations_create' %}">Add A Location</a></li>
-          <li><a href="{% url 'locations_index' %}">View All Locations</a></li>
-          <li><a href="{% url 'corals_create' %}">Add A Coral</a></li>
-          <li><a href="/corals">View All Corals</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'locations_create' %}">Add A Location</a></li>
+            <li><a href="{% url 'locations_index' %}">View All Locations</a></li>
+            <li><a href="{% url 'corals_create' %}">Add A Coral</a></li>
+            <li><a href="/corals">View All Corals</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
