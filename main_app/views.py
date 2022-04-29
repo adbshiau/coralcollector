@@ -15,6 +15,10 @@ class CoralCreate(CreateView):
   model = Coral
   fields = ['trade_name', 'scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow']
 
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
 class CoralUpdate(UpdateView):
   model = Coral
   fields = ['scientific_name', 'coral_type', 'difficulty', 'lighting', 'water_flow']
