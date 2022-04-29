@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 TYPE = (
     ('S', 'Soft'),
@@ -63,6 +64,7 @@ class Coral(models.Model):
         default=WATER_FLOW[1][0]
         )
     locations = models.ManyToManyField(Location)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.trade_name
